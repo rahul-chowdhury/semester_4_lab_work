@@ -1,0 +1,84 @@
+#include<iostream>
+#include<string.h>
+#include"Car.h"
+//#include"Vehicle.h"
+using namespace std;
+Car::Car():num_of_seats(0)
+{
+	colour=new char[100];
+	strcpy(colour,"");
+	model=new char[100];
+	strcpy(model,"");
+}
+
+Car::Car(int & a,char s1[100],char s2[100]):num_of_seats(a)
+{
+	colour=new char[strlen(s1)+1];
+	strcpy(colour,s1);
+	model=new char[strlen(s2)+1];
+	strcpy(model,s2);
+}
+
+Car::Car(Car & c):num_of_seats(c.num_of_seats)
+{
+	colour=new char[strlen(c.colour)+1];
+	strcpy(colour,c.colour);
+	model=new char[strlen(c.model)+1];
+	strcpy(model,c.model);
+}
+
+Car & Car::operator = (const Car & c)
+{
+	if(this==&c)
+		return *this;
+	num_of_seats=c.num_of_seats;
+	colour=new char[strlen(c.colour)+1];
+	strcpy(colour,c.colour);
+	model=new char[strlen(c.model)+1];
+	strcpy(model,c.model);
+
+}
+
+
+void Car::read()
+{
+	cout<<"enter the number of seats : ";
+	cin>>num_of_seats;
+	cout<<"enter the colour : ";
+	cin>>colour;
+	cout<<"enter the model : ";
+	cin>>model;
+	
+}
+void Car::write()
+{
+	cout<<"number of seats : "<<num_of_seats<<endl;
+	cout<<"colour : "<<colour<<endl;
+	cout<<"model : "<<model<<endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

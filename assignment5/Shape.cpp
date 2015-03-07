@@ -1,0 +1,63 @@
+#include<iostream>
+using namespace std;
+
+class Shape
+{
+	public:
+		virtual void read()=0;
+		virtual double area()=0;
+};
+class Rectangle:public Shape
+{
+	double length,breadth;
+	public:
+		void read()
+		{
+			cout<<"rectangle data"<<endl;
+			cout<<"enter length : "<<endl;
+			cin>>length;
+			cout<<"enter breadth : "<<endl;
+			cin>>breadth;
+		}
+		double area()
+		{
+			return length*breadth;
+		}
+};
+
+class Triangle:public Shape
+{
+	double base,height;
+	public:
+		void read()
+		{
+			cout<<"triangle data"<<endl;
+			cout<<"enter base : "<<endl;
+			cin>>base;
+			cout<<"enter height : "<<endl;
+			cin>>height;
+		}
+		double area()
+		{
+			return 0.5*base*height;
+		}
+};
+
+
+
+class Circle:public Shape
+{
+	double radius;
+	public:
+		void read()
+		{
+			cout<<"circle data"<<endl;
+			cout<<"enter radius : "<<endl;
+			cin>>radius;
+			
+		}
+		double area()
+		{
+			return .314*radius*radius;
+		}
+};

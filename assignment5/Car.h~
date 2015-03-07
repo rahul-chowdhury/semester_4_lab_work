@@ -1,0 +1,14 @@
+#include"Vehicle.h"
+class Car:public class Vehicle
+{
+private:
+int num_of_seats;
+char *colour,*model;
+public:
+Car();
+Car(int &,char [],char[]);
+Car(Car &);
+Car & operator = (const Car &);
+void read();
+void write();
+};

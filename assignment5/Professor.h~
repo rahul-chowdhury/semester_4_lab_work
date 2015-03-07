@@ -1,0 +1,11 @@
+class Professor:public Person
+{
+private:
+int salary,workload;
+public:
+Professor();
+Professor(int &,int &);
+Professor(Professor &);
+Professor & operator = (const Professor &);
+void display();
+};
